@@ -40,7 +40,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: ${{ steps.meta.outputs.tags }},${{ env.FA_GIT_TAG }}-${{ env.BUILD_NUM }}
+          tags: ${{ steps.meta.outputs.tags }},${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.FA_GIT_TAG }}-${{ env.BUILD_NUM }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             DUMP1090_FA_GIT_TAG=${{ env.FA_GIT_TAG}}
